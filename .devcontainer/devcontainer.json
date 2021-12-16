@@ -1,0 +1,34 @@
+{
+	"name": "angular-todo-app",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"forwardPorts": [
+		4200
+	],
+	"portsAttributes": {
+		"4200": {
+			"label": "Angular",
+			"onAutoForward": "silent"
+		}
+	},
+	"containerUser": "node",
+	"postCreateCommand": [
+		"npm",
+		"install"
+	],
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"angular.ng-template",
+				"dbaeumer.vscode-eslint",
+				"eamodio.gitlens",
+				"esbenp.prettier-vscode",
+				"VisualStudioExptTeam.vscodeintellicode"
+			],
+			"settings": {
+				"editor.defaultFormatter": "esbenp.prettier-vscode"
+			}
+		}
+	}
+}
